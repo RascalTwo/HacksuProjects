@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<title>Parallax at Hacksu</title>
+		<style>
+			* {
+				padding:0px;
+				position:relative;
+				margin:auto;
+			}
+
+			div {
+				max-width: 750px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='contianer'>
+			<ul id="scene" class='scene'>
+				<li class='layer' data-depth='0.0'><span><img src='image.png'></span></li>
+				<li class='layer' data-depth='0.1'><span><img src='image.png'></span></li>
+				<li class='layer' data-depth='0.2'><span><img src='image.png'></span></li>
+				<li class='layer' data-depth='0.3'><span><img src='image.png'></span></li>
+				<li class='layer' data-depth='0.4'><span><img src='image.png'></span></li>
+				<li class='layer' data-depth='0.5'><span><img src='image.png'></span></li>
+				<li class='layer' data-depth='0.6'><span><img src='image.png'></span></li>
+				<li class='layer' data-depth='0.7'><span><img src='image.png'></span></li>
+				<li class='layer' data-depth='0.8'><span><img src='image.png'></span></li>
+				<li class='layer' data-depth='0.9'><span><img src='image.png'></span></li>
+				<li class='layer' data-depth='1.0'><span><img src='image.png'></span></li>
+			</ul>
+		</div>
+	</body>
+	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script src="jquery.parallax.min.js"></script>
+	<script>
+		$('#scene').parallax({
+			scalarX: 100,
+ 			scalarY: 100,
+ 			calibrateX: true,
+  			calibrateY: true,
+ 			frictionX: 1.0,
+ 			frictionY: 1.0,
+			originX: 0.5,
+			originY: 0.5
+		});
+
+		currentDegree = 360;
+		imageDimention = 600;
+
+		images = document.getElementsByTagName('img');
+		for (i = 0; i < images.length; i++){
+				images[i].width=imageDimention
+				images[i].height=imageDimention
+				imageDimention -= 50
+		}
+
+		spans = document.getElementsByTagName('span');
+		function rotate(){
+			for (i = 0; i < spans.length; i++){
+	            spans[i].style.WebkitTransitionDuration="10s";
+	            spans[i].style.webkitTransform = 'rotate(' + currentDegree + 'deg)';
+			}
+			currentDegree += 360
+		}
+
+		setTimeout(rotate, 1)
+		setInterval(function(){
+			rotate()
+		},10001)
+	</script>
+</html>
