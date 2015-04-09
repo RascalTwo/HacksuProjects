@@ -1,1 +1,14 @@
-Parallax 03-31-15
+	Parallax 03-31-15
+Kinda-Hard to customize depth-based element moving library
+
+	Meteor To-Do List 04-07-15
+
+Extreamly customizeabe 'cohesive development platform' as the website says.
+That basicly means it allows webpages to be created extreamly easily and quickly.
+It also has Spacebars - based off Handlebars - which is a template system for webpages.
+It also defaulty comes with MongoDB and a few other packages, with many more obtainable
+from http://www.atmospherejs.com/.
+It also allows quick deployment to a .meteor.com website via 'meteor deploy randomname.meteor.com'
+allowing whatever webpage you developed to be accessed by others.
+There are too many features about meteor to explain, and this has already become a wall of text,
+so check it out for yourself: https://www.meteor.com/.
